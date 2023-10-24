@@ -61,8 +61,14 @@ public class AuthController {
         }
 
         UserEntity user = new UserEntity();
+
         user.setUsername(registerDto.getUsername());
         user.setPassword(passwordEncoder.encode((registerDto.getPassword())));
+        user.setAddress(registerDto.getAddress());
+        user.setPhoneNumber(registerDto.getPhoneNumber());
+        user.setDepartment(registerDto.getDepartment());
+        user.setEmail(registerDto.getEmail());
+        user.setIdentityCard(registerDto.getIdentityCard());
 
         Role roles = roleRepository.findByName("USER").get();
         user.setRoles(Collections.singletonList(roles));
