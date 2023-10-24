@@ -1,12 +1,12 @@
-package com.pokemonreview.api.service;
+package com.information.api.service;
 
-import com.pokemonreview.api.dto.PokemonDto;
-import com.pokemonreview.api.dto.ReviewDto;
-import com.pokemonreview.api.models.Pokemon;
-import com.pokemonreview.api.models.Review;
-import com.pokemonreview.api.repository.PokemonRepository;
-import com.pokemonreview.api.repository.ReviewRepository;
-import com.pokemonreview.api.service.impl.ReviewServiceImpl;
+import com.information.api.dto.PokemonDto;
+import com.information.api.dto.ReviewDto;
+import com.information.api.models.Pokemon;
+import com.information.api.models.Review;
+import com.information.api.repository.PokemonRepository;
+import com.information.api.repository.ReviewRepository;
+import com.information.api.service.impl.ReviewServiceImpl;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

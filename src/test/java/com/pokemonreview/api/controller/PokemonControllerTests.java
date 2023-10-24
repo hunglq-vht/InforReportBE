@@ -1,13 +1,13 @@
-package com.pokemonreview.api.controller;
+package com.information.api.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pokemonreview.api.controllers.PokemonController;
-import com.pokemonreview.api.dto.PokemonDto;
-import com.pokemonreview.api.dto.PokemonResponse;
-import com.pokemonreview.api.dto.ReviewDto;
-import com.pokemonreview.api.models.Pokemon;
-import com.pokemonreview.api.models.Review;
-import com.pokemonreview.api.service.PokemonService;
+import com.information.api.controllers.PokemonController;
+import com.information.api.dto.PokemonDto;
+import com.information.api.dto.PokemonResponse;
+import com.information.api.dto.ReviewDto;
+import com.information.api.models.Pokemon;
+import com.information.api.models.Review;
+import com.information.api.service.PokemonService;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

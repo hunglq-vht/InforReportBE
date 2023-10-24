@@ -1,6 +1,6 @@
-package com.pokemonreview.api.repository;
+package com.information.api.repository;
 
-import com.pokemonreview.api.models.Pokemon;
+import com.information.api.models.Pokemon;
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
