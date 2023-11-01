@@ -78,4 +78,11 @@ public class InformationServiceImpl implements InformationService {
         }
         return result;
     }
+
+    @Override
+    public boolean deleteInformation(int informationId) {
+        if (!informationRepository.existsById(informationId)) return false;
+        informationRepository.deleteById(informationId);
+        return true;
+    }
 }

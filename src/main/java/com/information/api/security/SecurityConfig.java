@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -28,6 +29,12 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//        http.authorizeHttpRequests((requests) ->
+//                requests.requestMatchers(new AntPathRequestMatcher("/api/**")).permitAll().requestMatchers(
+//                                new AntPathRequestMatcher("/api/auth/**")).permitAll().requestMatchers(
+//                                new AntPathRequestMatcher("**")).permitAll()
+//                        .anyRequest().authenticated()).httpBasic();
+//        return http.build();
         http
                 .csrf().disable()
                 .exceptionHandling()
@@ -37,8 +44,10 @@ public class SecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**").permitAll()
+//                .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/**").permitAll()
+                .requestMatchers("/api/auth/**").permitAll()
+//                .requestMatchers("**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();

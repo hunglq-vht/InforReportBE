@@ -21,7 +21,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/auth/")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class AuthController {
 
     private AuthenticationManager authenticationManager;
@@ -67,6 +68,7 @@ public class AuthController {
         user.setDepartment(registerDto.getDepartment());
         user.setEmail(registerDto.getEmail());
         user.setIdentityCard(registerDto.getIdentityCard());
+        user.setFullName(registerDto.getFullName());
 
         Role roles = roleRepository.findByName("USER").get();
         user.setRoles(Collections.singletonList(roles));

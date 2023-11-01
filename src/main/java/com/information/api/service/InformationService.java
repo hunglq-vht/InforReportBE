@@ -14,4 +14,6 @@ public interface InformationService {
     Information updateInformation(int id, Information information);
 
     List<Information> getInformationByParams(List<InformationStatus> statuses, List<InformationType> types, long fromTime, long toTime);
+
+    boolean deleteInformation(int id);
 }

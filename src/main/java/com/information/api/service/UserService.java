@@ -8,4 +8,6 @@ public interface UserService {
     List<UserEntity> getAllUsers();
 
     UserEntity updateUser(UserEntity userInfo);
+
+    boolean deleteUser(int userId);
 }

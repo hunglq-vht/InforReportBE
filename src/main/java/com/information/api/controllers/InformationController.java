@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @Slf4j
-//@CrossOrigin(origins = "http://localhost:3030/information", maxAge = 3600)
 @RestController
 @RequestMapping("/api/")
 @CrossOrigin(origins = "*", value = "*")
@@ -71,5 +70,12 @@ public class InformationController {
     public ResponseEntity<?> updateInformation(@PathVariable("id") int informationId,
                                                @RequestBody Information information) {
         return ResponseEntity.ok(informationService.updateInformation(informationId, information));
+    }
+
+    @DeleteMapping("information/{id}")
+    public ResponseEntity<?> deleteInformation(@PathVariable("id") int informationId) {
+        boolean deleteResult = informationService.deleteInformation(informationId);
+        if (deleteResult) return ResponseEntity.ok("Deleted");
+        return ResponseEntity.notFound().build();
     }
 }

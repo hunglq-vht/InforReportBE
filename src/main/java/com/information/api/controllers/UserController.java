@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class UserController {
 
     private UserService userService;
@@ -25,5 +26,12 @@ public class UserController {
     @PutMapping("user")
     public ResponseEntity<?> updateUser(@RequestBody UserEntity user) {
         return ResponseEntity.ok(userService.updateUser(user));
+    }
+
+    @DeleteMapping("/user/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable int id) {
+        boolean isDelete = userService.deleteUser(id);
+        if (isDelete) return ResponseEntity.ok().build();
+        return ResponseEntity.notFound().build();
     }
 }
